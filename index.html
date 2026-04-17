@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="description" content="SunBirch Media Limited - Digital Multimedia, Video Production, Brand Visual Design, and New Media Communication Services based in Hong Kong">
+    <meta name="keywords" content="SunBirch Media, Hong Kong Multimedia Company, Video Production, Visual Design, Brand Communication">
+    <title>SunBirch Media Limited | Hong Kong Multimedia Company</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+        
+        /* Global Variables - Wood & Fire Brand Colors */
+        :root {
+            --wood-color: #2A5E33;
+            --fire-color: #D4AF37;
+            --dark-bg: #121212;
+            --light-text: #FFFFFF;
+            --gray-text: #AAAAAA;
+            --card-bg: #1A1A1A;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        /* Navigation Bar - Mobile Friendly */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .logo h2 {
+            color: var(--fire-color);
+            font-size: clamp(18px, 5vw, 22px);
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: clamp(12px, 3vw, 30px);
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: clamp(13px, 3.5vw, 16px);
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+        
+        .nav-links a:hover {
+            color: var(--fire-color);
+        }
+        
+        /* Home Banner */
+        .banner {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 5% 40px;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1536240807324-30e390761d55?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .banner h1 {
+            font-size: clamp(32px, 8vw, 52px);
+            color: var(--fire-color);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .banner .tagline {
+            font-size: clamp(16px, 4vw, 20px);
+            color: var(--light-text);
+            margin-bottom: 15px;
+            max-width: 90%;
+        }
+        
+        .banner .slogan {
+            font-size: clamp(14px, 3.5vw, 18px);
+            color: var(--gray-text);
+            max-width: 85%;
+        }
+        
+        /* Section Headers */
+        .section-title {
+            text-align: center;
+            font-size: clamp(28px, 6vw, 36px);
+            color: var(--fire-color);
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: var(--wood-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .about-text p {
+            font-size: clamp(15px, 4vw, 17px);
+            color: var(--light-text);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 60px 5%;
+            background: #151515;
+        }
+        
+        .service-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: var(--card-bg);
+            padding: 30px 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: 0.3s;
+        }
+        
+        .service-card:active {
+            transform: scale(0.98);
+        }
+        
+        .service-card h3 {
+            color: var(--fire-color);
+            font-size: clamp(20px, 5vw, 22px);
+            margin-bottom: 12px;
+        }
+        
+        .service-card p {
+            color: var(--gray-text);
+            font-size: clamp(14px, 3.5vw, 15px);
+        }
+        
+        /* Company Info Section */
+        .company-info {
+            padding: 60px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .info-box {
+            background: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(42, 94, 51, 0.3);
+            text-align: left;
+        }
+        
+        .info-box h3 {
+            color: var(--fire-color);
+            font-size: clamp(24px, 6vw, 28px);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 12px;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .info-item strong {
+            color: var(--fire-color);
+            display: block;
+            font-size: clamp(14px, 3.5vw, 16px);
+            margin-bottom: 5px;
+        }
+        
+        .info-item span {
+            color: var(--light-text);
+            font-size: clamp(15px, 4vw, 18px);
+        }
+        
+        /* Footer */
+        footer {
+            background: #0A0A0A;
+            padding: 30px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        footer p {
+            color: var(--gray-text);
+            font-size: clamp(12px, 3vw, 14px);
+        }
+        
+        /* Tablet and Desktop Styles */
+        @media (min-width: 640px) {
+            .service-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+            }
+            
+            .info-box {
+                padding: 40px;
+                text-align: center;
+            }
+            
+            .info-item strong {
+                display: inline;
+                margin-right: 10px;
+            }
+            
+            .info-item span {
+                display: inline;
+            }
+        }
+        
+        @media (min-width: 900px) {
+            .service-cards {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .service-card:hover {
+                transform: translateY(-8px);
+                border-color: var(--fire-color);
+            }
+            
+            .service-card:active {
+                transform: translateY(-8px);
+            }
+        }
+        
+        /* Touch-friendly tap targets */
+        a, button, .service-card {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+        
+        /* Prevent horizontal overflow */
+        img, video, iframe {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <h2>SunBirch Media</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#info">Info</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Banner -->
+    <section class="banner" id="home">
+        <h1>SunBirch Media Limited</h1>
+        <p class="tagline">Wood and Fire · Light and Vision</p>
+        <p class="slogan">Premium multimedia creative and visual communication services based in Hong Kong</p>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>SunBirch Media Limited is a Hong Kong-based professional multimedia service provider. We combine creative design, video production, and digital communication to deliver high-quality visual solutions for our clients.</p>
+                <p>Our brand name reflects our core philosophy: "Sun" represents fire and light - the spark of creativity and illumination. "Birch" represents wood and stability - a solid foundation for growth. Together, wood fuels fire, symbolizing sustainable creative energy and lasting business relationships.</p>
+                <p>We uphold professionalism, innovation, and excellence, providing one-stop visual communication solutions across multiple industries.</p>
+            </div>
+            <div class="about-text">
+                <p style="color: var(--fire-color); font-size: 1.2em; text-align: center;">Our Promise</p>
+                <p style="text-align: center;">To transform ideas into compelling visual stories that resonate with audiences and elevate brands in the digital age.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <h3>Video Production</h3>
+                <p>Corporate videos, short films, post-production editing, and visual effects. We create high-quality cinematic content.</p>
+            </div>
+            <div class="service-card">
+                <h3>Brand Visual Design</h3>
+                <p>VI design, poster design, and brand identity packaging. We give your brand a unique visual signature.</p>
+            </div>
+            <div class="service-card">
+                <h3>Digital Multimedia</h3>
+                <p>New media content strategy, interactive multimedia development, and online communication planning.</p>
+            </div>
+            <div class="service-card">
+                <h3>Post-Production</h3>
+                <p>Professional editing, color grading, sound design, and effects to enhance overall video quality and impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Info Section -->
+    <section class="company-info" id="info">
+        <h2 class="section-title">Company Information</h2>
+        <div class="info-box">
+            <h3>Registered Business</h3>
+            <div class="info-item">
+                <strong>Company Name:</strong>
+                <span>SunBirch Media Limited</span>
+            </div>
+            <div class="info-item">
+                <strong>Location:</strong>
+                <span>Hong Kong SAR</span>
+            </div>
+            <div class="info-item">
+                <strong>Brand Philosophy:</strong>
+                <span>Wood fuels Fire · Creativity without Boundaries · Bringing Light and Vision to Life</span>
+            </div>
+            <div class="info-item">
+                <strong>Services:</strong>
+                <span>Video Production · Brand Design · Digital Media · Post-Production</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 SunBirch Media Limited. All Rights Reserved.</p>
+        <p style="margin-top: 8px;">Hong Kong Multimedia & Visual Communication</p>
+    </footer>
+
+    <script>
+        // Smooth scroll with offset for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 70;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Highlight active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.style.color = 'var(--light-text)';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = 'var(--fire-color)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
