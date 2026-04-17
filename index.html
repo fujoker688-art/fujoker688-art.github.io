@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-HK">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <meta name="description" content="SunBirch Media Limited - Digital Multimedia, Video Production, Brand Visual Design, and New Media Communication Services based in Hong Kong">
-    <meta name="keywords" content="SunBirch Media, Hong Kong Multimedia Company, Video Production, Visual Design, Brand Communication">
-    <title>SunBirch Media Limited | Hong Kong Multimedia Company</title>
+    <meta name="description" content="SunBirch Media Limited 曦樺多媒體有限公司 - Hong Kong multimedia company specializing in video production, brand visual design, and digital content creation. 香港多媒體公司，專注影視製作、品牌視覺設計及數位內容創作。">
+    <meta name="keywords" content="SunBirch Media, 曦樺多媒體, Hong Kong multimedia, video production, brand design, 香港多媒體, 影視製作, 視覺設計">
+    <title>SunBirch Media Limited | 曦樺多媒體有限公司</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', Roboto, Arial, sans-serif;
         }
         
         /* Global Variables - Wood & Fire Brand Colors */
@@ -31,7 +31,7 @@
             font-size: 16px;
         }
         
-        /* Navigation Bar - Mobile Friendly */
+        /* Navigation Bar */
         nav {
             position: fixed;
             top: 0;
@@ -44,30 +44,61 @@
             align-items: center;
             z-index: 999;
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            flex-wrap: wrap;
         }
         
         .logo h2 {
             color: var(--fire-color);
-            font-size: clamp(18px, 5vw, 22px);
+            font-size: clamp(16px, 4.5vw, 20px);
             font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .logo .en {
+            font-size: clamp(12px, 3.5vw, 14px);
+            color: var(--gray-text);
+            font-weight: 400;
         }
         
         .nav-links {
             display: flex;
-            gap: clamp(12px, 3vw, 30px);
+            gap: clamp(10px, 3vw, 25px);
             list-style: none;
         }
         
         .nav-links a {
             color: var(--light-text);
             text-decoration: none;
-            font-size: clamp(13px, 3.5vw, 16px);
+            font-size: clamp(12px, 3.5vw, 15px);
             transition: 0.3s;
             white-space: nowrap;
         }
         
         .nav-links a:hover {
             color: var(--fire-color);
+        }
+        
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            gap: 8px;
+            margin-left: 10px;
+        }
+        
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--fire-color);
+            color: var(--light-text);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .lang-btn.active {
+            background: var(--fire-color);
+            color: var(--dark-bg);
         }
         
         /* Home Banner */
@@ -85,21 +116,28 @@
         }
         
         .banner h1 {
-            font-size: clamp(32px, 8vw, 52px);
+            font-size: clamp(28px, 7vw, 48px);
             color: var(--fire-color);
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             letter-spacing: 1px;
         }
         
-        .banner .tagline {
-            font-size: clamp(16px, 4vw, 20px);
-            color: var(--light-text);
+        .banner .company-name-en {
+            font-size: clamp(20px, 5vw, 32px);
+            color: var(--wood-color);
             margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .banner .tagline {
+            font-size: clamp(14px, 4vw, 18px);
+            color: var(--light-text);
+            margin-bottom: 10px;
             max-width: 90%;
         }
         
         .banner .slogan {
-            font-size: clamp(14px, 3.5vw, 18px);
+            font-size: clamp(13px, 3.5vw, 16px);
             color: var(--gray-text);
             max-width: 85%;
         }
@@ -107,10 +145,17 @@
         /* Section Headers */
         .section-title {
             text-align: center;
-            font-size: clamp(28px, 6vw, 36px);
+            font-size: clamp(26px, 6vw, 34px);
             color: var(--fire-color);
-            margin-bottom: 40px;
+            margin-bottom: 15px;
             position: relative;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: clamp(14px, 4vw, 18px);
+            color: var(--gray-text);
+            margin-bottom: 35px;
         }
         
         .section-title::after {
@@ -138,10 +183,18 @@
         }
         
         .about-text p {
-            font-size: clamp(15px, 4vw, 17px);
+            font-size: clamp(14px, 4vw, 16px);
             color: var(--light-text);
             margin-bottom: 20px;
             line-height: 1.8;
+        }
+        
+        .about-text .en {
+            color: var(--gray-text);
+            font-size: clamp(13px, 3.5vw, 15px);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
         }
         
         /* Services Section */
@@ -173,13 +226,19 @@
         
         .service-card h3 {
             color: var(--fire-color);
-            font-size: clamp(20px, 5vw, 22px);
-            margin-bottom: 12px;
+            font-size: clamp(18px, 5vw, 20px);
+            margin-bottom: 5px;
+        }
+        
+        .service-card .en-title {
+            color: var(--gray-text);
+            font-size: clamp(12px, 3.5vw, 14px);
+            margin-bottom: 15px;
         }
         
         .service-card p {
             color: var(--gray-text);
-            font-size: clamp(14px, 3.5vw, 15px);
+            font-size: clamp(13px, 3.5vw, 14px);
         }
         
         /* Company Info Section */
@@ -194,12 +253,18 @@
             padding: 30px 20px;
             border-radius: 15px;
             border: 1px solid rgba(42, 94, 51, 0.3);
-            text-align: left;
         }
         
         .info-box h3 {
             color: var(--fire-color);
-            font-size: clamp(24px, 6vw, 28px);
+            font-size: clamp(22px, 5.5vw, 26px);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .info-box .en-subtitle {
+            color: var(--gray-text);
+            font-size: clamp(13px, 3.5vw, 15px);
             margin-bottom: 25px;
             text-align: center;
         }
@@ -217,13 +282,19 @@
         .info-item strong {
             color: var(--fire-color);
             display: block;
-            font-size: clamp(14px, 3.5vw, 16px);
+            font-size: clamp(13px, 3.5vw, 15px);
             margin-bottom: 5px;
         }
         
         .info-item span {
             color: var(--light-text);
-            font-size: clamp(15px, 4vw, 18px);
+            font-size: clamp(14px, 4vw, 16px);
+            display: block;
+        }
+        
+        .info-item .en {
+            color: var(--gray-text);
+            font-size: clamp(12px, 3.5vw, 14px);
         }
         
         /* Footer */
@@ -236,7 +307,12 @@
         
         footer p {
             color: var(--gray-text);
-            font-size: clamp(12px, 3vw, 14px);
+            font-size: clamp(11px, 3vw, 13px);
+        }
+        
+        /* Bilingual Text Display */
+        .zh, .en {
+            transition: 0.3s;
         }
         
         /* Tablet and Desktop Styles */
@@ -252,7 +328,7 @@
             
             .info-box {
                 padding: 40px;
-                text-align: center;
+                text-align: left;
             }
             
             .info-item strong {
@@ -262,6 +338,10 @@
             
             .info-item span {
                 display: inline;
+            }
+            
+            nav {
+                flex-wrap: nowrap;
             }
         }
         
@@ -280,8 +360,8 @@
             }
         }
         
-        /* Touch-friendly tap targets */
-        a, button, .service-card {
+        /* Touch-friendly */
+        a, button, .service-card, .lang-btn {
             -webkit-tap-highlight-color: transparent;
         }
         
@@ -291,7 +371,6 @@
             scroll-padding-top: 70px;
         }
         
-        /* Prevent horizontal overflow */
         img, video, iframe {
             max-width: 100%;
             height: auto;
@@ -299,132 +378,168 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar / 導航欄 -->
     <nav>
         <div class="logo">
-            <h2>SunBirch Media</h2>
+            <h2>曦樺多媒體 <span class="en">SunBirch Media</span></h2>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#info">Info</a></li>
-        </ul>
+        <div style="display: flex; align-items: center;">
+            <ul class="nav-links">
+                <li><a href="#home"><span class="zh">首頁</span><span class="en" style="display:none;">Home</span></a></li>
+                <li><a href="#about"><span class="zh">關於</span><span class="en" style="display:none;">About</span></a></li>
+                <li><a href="#services"><span class="zh">服務</span><span class="en" style="display:none;">Services</span></a></li>
+                <li><a href="#info"><span class="zh">信息</span><span class="en" style="display:none;">Info</span></a></li>
+            </ul>
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="setLanguage('zh')">中</button>
+                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
     </nav>
 
-    <!-- Home Banner -->
+    <!-- Home Banner / 首頁橫幅 -->
     <section class="banner" id="home">
-        <h1>SunBirch Media Limited</h1>
-        <p class="tagline">Wood and Fire · Light and Vision</p>
-        <p class="slogan">Premium multimedia creative and visual communication services based in Hong Kong</p>
+        <h1 class="zh">曦樺多媒體有限公司</h1>
+        <h1 class="en" style="display:none;">SunBirch Media Limited</h1>
+        <p class="company-name-en zh">SunBirch Media Limited</p>
+        <p class="company-name-en en" style="display:none;">曦樺多媒體有限公司</p>
+        <p class="tagline zh">木火相生 · 創意傳光</p>
+        <p class="tagline en" style="display:none;">Wood and Fire · Light and Vision</p>
+        <p class="slogan zh">立足香港，專注高端多媒體創意與視覺傳播</p>
+        <p class="slogan en" style="display:none;">Premium multimedia creative and visual communication services based in Hong Kong</p>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section / 關於我們 -->
     <section class="about" id="about">
-        <h2 class="section-title">About Us</h2>
+        <h2 class="section-title zh">關於曦樺</h2>
+        <h2 class="section-title en" style="display:none;">About Us</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>SunBirch Media Limited is a Hong Kong-based professional multimedia service provider. We combine creative design, video production, and digital communication to deliver high-quality visual solutions for our clients.</p>
-                <p>Our brand name reflects our core philosophy: "Sun" represents fire and light - the spark of creativity and illumination. "Birch" represents wood and stability - a solid foundation for growth. Together, wood fuels fire, symbolizing sustainable creative energy and lasting business relationships.</p>
-                <p>We uphold professionalism, innovation, and excellence, providing one-stop visual communication solutions across multiple industries.</p>
+                <p class="zh">曦樺多媒體有限公司（SunBirch Media Limited），是立足香港的專業多媒體服務機構，結合創意設計、影視製作、數位傳播於一體，致力為客戶打造高品質視覺傳播方案。</p>
+                <p class="en" style="display:none;">SunBirch Media Limited is a Hong Kong-based professional multimedia service provider. We combine creative design, video production, and digital communication to deliver high-quality visual solutions for our clients.</p>
+                
+                <p class="zh">品牌命名蘊含「曦（火）·光影傳播，樺（木）·根基穩固」之意，木火相生，事業根基穩固、創意生生不息。</p>
+                <p class="en" style="display:none;">Our brand name reflects our core philosophy: "Sun" represents fire and light - the spark of creativity and illumination. "Birch" represents wood and stability - a solid foundation for growth.</p>
+                
+                <p class="zh">我們秉持專業、創新、精緻的服務理念，深耕多媒體行業，為客戶提供一站式視覺傳播解決方案。</p>
+                <p class="en" style="display:none;">We uphold professionalism, innovation, and excellence, providing one-stop visual communication solutions across multiple industries.</p>
             </div>
             <div class="about-text">
-                <p style="color: var(--fire-color); font-size: 1.2em; text-align: center;">Our Promise</p>
-                <p style="text-align: center;">To transform ideas into compelling visual stories that resonate with audiences and elevate brands in the digital age.</p>
+                <p style="color: var(--fire-color); font-size: 1.1em; text-align: center;" class="zh">我們的承諾</p>
+                <p style="color: var(--fire-color); font-size: 1.1em; text-align: center;" class="en" style="display:none;">Our Promise</p>
+                <p style="text-align: center;" class="zh">將創意轉化為動人的視覺故事，在數位時代為品牌注入生命力。</p>
+                <p style="text-align: center;" class="en" style="display:none;">To transform ideas into compelling visual stories that resonate with audiences and elevate brands in the digital age.</p>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section / 服務範圍 -->
     <section class="services" id="services">
-        <h2 class="section-title">Our Services</h2>
+        <h2 class="section-title zh">核心服務</h2>
+        <h2 class="section-title en" style="display:none;">Our Services</h2>
         <div class="service-cards">
             <div class="service-card">
-                <h3>Video Production</h3>
-                <p>Corporate videos, short films, post-production editing, and visual effects. We create high-quality cinematic content.</p>
+                <h3 class="zh">影視製作</h3>
+                <h3 class="en" style="display:none;">Video Production</h3>
+                <div class="en-title zh">Video Production</div>
+                <div class="en-title en" style="display:none;">影視製作</div>
+                <p class="zh">企業宣傳片、短片拍攝、後期剪輯、視覺特效製作，打造高質感影視內容。</p>
+                <p class="en" style="display:none;">Corporate videos, short films, post-production editing, and visual effects. We create high-quality cinematic content.</p>
             </div>
             <div class="service-card">
-                <h3>Brand Visual Design</h3>
-                <p>VI design, poster design, and brand identity packaging. We give your brand a unique visual signature.</p>
+                <h3 class="zh">品牌視覺設計</h3>
+                <h3 class="en" style="display:none;">Brand Visual Design</h3>
+                <div class="en-title zh">Brand Visual Design</div>
+                <div class="en-title en" style="display:none;">品牌視覺設計</div>
+                <p class="zh">VI設計、海報設計、品牌形象包裝，賦予品牌獨特視覺記憶點。</p>
+                <p class="en" style="display:none;">VI design, poster design, and brand identity packaging. We give your brand a unique visual signature.</p>
             </div>
             <div class="service-card">
-                <h3>Digital Multimedia</h3>
-                <p>New media content strategy, interactive multimedia development, and online communication planning.</p>
+                <h3 class="zh">數位多媒體</h3>
+                <h3 class="en" style="display:none;">Digital Multimedia</h3>
+                <div class="en-title zh">Digital Multimedia</div>
+                <div class="en-title en" style="display:none;">數位多媒體</div>
+                <p class="zh">新媒體內容策劃、互動多媒體開發、線上傳播策劃，精準觸達目標受眾。</p>
+                <p class="en" style="display:none;">New media content strategy, interactive multimedia development, and online communication planning.</p>
             </div>
             <div class="service-card">
-                <h3>Post-Production</h3>
-                <p>Professional editing, color grading, sound design, and effects to enhance overall video quality and impact.</p>
+                <h3 class="zh">視頻後期製作</h3>
+                <h3 class="en" style="display:none;">Post-Production</h3>
+                <div class="en-title zh">Post-Production</div>
+                <div class="en-title en" style="display:none;">視頻後期製作</div>
+                <p class="zh">專業剪輯、調色、配音、特效包裝，提升影片整體品質與視覺效果。</p>
+                <p class="en" style="display:none;">Professional editing, color grading, sound design, and effects to enhance overall video quality and impact.</p>
             </div>
         </div>
     </section>
 
-    <!-- Company Info Section -->
+    <!-- Company Info Section / 公司信息 -->
     <section class="company-info" id="info">
-        <h2 class="section-title">Company Information</h2>
+        <h2 class="section-title zh">公司信息</h2>
+        <h2 class="section-title en" style="display:none;">Company Information</h2>
         <div class="info-box">
-            <h3>Registered Business</h3>
+            <h3 class="zh">公司註冊信息</h3>
+            <h3 class="en" style="display:none;">Registered Business</h3>
+            <div class="en-subtitle zh">Registered Business Information</div>
+            <div class="en-subtitle en" style="display:none;">公司註冊信息</div>
+            
             <div class="info-item">
-                <strong>Company Name:</strong>
+                <strong class="zh">公司名稱：</strong>
+                <strong class="en" style="display:none;">Company Name:</strong>
                 <span>SunBirch Media Limited</span>
+                <span class="en zh">曦樺多媒體有限公司</span>
+                <span class="en en" style="display:none;">(SunBirch Media Limited)</span>
             </div>
+            
             <div class="info-item">
-                <strong>Location:</strong>
-                <span>Hong Kong SAR</span>
+                <strong class="zh">所在地：</strong>
+                <strong class="en" style="display:none;">Location:</strong>
+                <span class="zh">香港特別行政區</span>
+                <span class="en" style="display:none;">Hong Kong SAR</span>
             </div>
+            
             <div class="info-item">
-                <strong>Brand Philosophy:</strong>
-                <span>Wood fuels Fire · Creativity without Boundaries · Bringing Light and Vision to Life</span>
+                <strong class="zh">品牌理念：</strong>
+                <strong class="en" style="display:none;">Brand Philosophy:</strong>
+                <span class="zh">木火相生 · 創意無界，傳遞光影之美</span>
+                <span class="en" style="display:none;">Wood fuels Fire · Creativity without Boundaries · Bringing Light and Vision to Life</span>
             </div>
+            
             <div class="info-item">
-                <strong>Services:</strong>
-                <span>Video Production · Brand Design · Digital Media · Post-Production</span>
+                <strong class="zh">服務範圍：</strong>
+                <strong class="en" style="display:none;">Services:</strong>
+                <span class="zh">影視製作 · 品牌設計 · 數位媒體 · 後期製作</span>
+                <span class="en" style="display:none;">Video Production · Brand Design · Digital Media · Post-Production</span>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer / 頁腳 -->
     <footer>
-        <p>© 2024 SunBirch Media Limited. All Rights Reserved.</p>
-        <p style="margin-top: 8px;">Hong Kong Multimedia & Visual Communication</p>
+        <p class="zh">© 2024 SunBirch Media Limited 曦樺多媒體有限公司 版權所有</p>
+        <p class="en" style="display:none;">© 2024 SunBirch Media Limited. All Rights Reserved.</p>
+        <p style="margin-top: 8px;" class="zh">香港多媒體及視覺傳播服務</p>
+        <p style="margin-top: 8px;" class="en" style="display:none;">Hong Kong Multimedia & Visual Communication</p>
     </footer>
 
     <script>
-        // Smooth scroll with offset for fixed header
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offset = 70;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Highlight active nav link on scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-        
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (window.pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
+        // Language switcher function
+        function setLanguage(lang) {
+            const zhElements = document.querySelectorAll('.zh');
+            const enElements = document.querySelectorAll('.en');
+            const langBtns = document.querySelectorAll('.lang-btn');
+            
+            // Update buttons
+            langBtns.forEach(btn => {
+                btn.classList.remove('active');
             });
             
-            navLinks.forEach(link => {
-                link.style.color = 'var(--light-text)';
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.style.color = 'var(--fire-color)';
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+            if (lang === 'zh') {
+                zhElements.forEach(el => el.style.display = '');
+                enElements.forEach(el => el.style.display = 'none');
+                langBtns[0].classList.add('active');
+                document.documentElement.lang = 'zh-HK';
+            } else {
+                zhElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = '');
+         
